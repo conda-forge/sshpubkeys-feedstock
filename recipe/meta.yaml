@@ -1,17 +1,17 @@
 {% set name = "sshpubkeys" %}
-{% set version = "3.1.0" %}
+{% set version = "3.3.0" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: "b388399caeeccdc145f06fd0d2665eeecc545385c60b55c282a15a022215af80"
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 89e10a0caf38407426a05e3f5b5243d6e2f9575d6af45e9321291d20bcfca8f7
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
   noarch: python
 
 requirements:
@@ -28,12 +28,12 @@ test:
     - sshpubkeys
 
 about:
-  home: "https://github.com/ojarva/python-sshpubkeys"
-  license: "BSD 3-Clause"
-  license_family: "BSD"
-  license_file: "LICENSE.txt"
-  summary: "SSH public key parser"
-  dev_url: "https://github.com/ojarva/python-sshpubkeys"
+  home: https://github.com/ojarva/python-sshpubkeys
+  license: BSD 3-Clause
+  license_family: BSD
+  license_file: LICENSE.txt
+  summary: SSH public key parser
+  dev_url: https://github.com/ojarva/python-sshpubkeys
 
 extra:
   recipe-maintainers:
