@@ -17,15 +17,19 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python >=3.6
   run:
     - cryptography >=2.1.4
     - ecdsa >=0.13
-    - python
+    - python >=3.6
 
 test:
   imports:
     - sshpubkeys
+  command:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/ojarva/python-sshpubkeys
